@@ -93,7 +93,7 @@ const sandwichUniswapV2RouterTx = async (txHash) => {
   const userMinRecv = await getUniv2ExactWethTokenMinRecv(amountOutMin, path);
   const userAmountIn = tx.value; // User is sending exact ETH (not WETH)
 
-  logTrace(
+  logInfo(  
     strLogPrefix,
     "potentially sandwichable swapExactETHForTokens tx found",
     JSON.stringify(

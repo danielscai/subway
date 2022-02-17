@@ -7,6 +7,7 @@ dotenv.config();
 import { ethers } from "ethers";
 import { logError } from "./logging.js";
 
+const config = require("./config.json");
 const IUniswapV2PairAbi = require("./abi/IUniswapV2Pair.json");
 
 let hasEnv = true;
@@ -32,7 +33,7 @@ if (!hasEnv) {
 
 // Contracts
 export const CONTRACTS = {
-  UNIV2_ROUTER: "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
+  UNIV2_ROUTER: config.UNIV2_ROUTER,
 
   // Sandwich contract
   SANDWICH: process.env.SANDWICH_CONTRACT,
@@ -46,10 +47,10 @@ export const TOKENS = {
 
 // Providers
 export const provider = new ethers.providers.JsonRpcProvider(
-  process.env.RPC_URL
+  config.RPC_URL
 );
 export const wssProvider = new ethers.providers.WebSocketProvider(
-  process.env.RPC_URL_WSS
+  config.RPC_URL_WSS
 );
 
 // Used to send transactions, needs ether
@@ -65,6 +66,8 @@ export const authKeyWallet = new ethers.Wallet(
 );
 
 // Common contracts
+// 这里为什么初始化了一个 空地址呢？
+// 第三个参数是singerprovider， 这个不清楚做什么用的。  
 export const uniswapV2Pair = new ethers.Contract(
   ethers.constants.AddressZero,
   IUniswapV2PairAbi,

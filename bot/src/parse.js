@@ -17,6 +17,8 @@ export const parseUniv2RouterTx = (txData) => {
     return null;
   }
 
+  // 这里就会慢一些，因为经过了上面的decodeMethod解析过程， 
+  // 可以直接提取txData的前4个字节，然后跟已经存在的方法签名对比，这样就不用解析txData了。 
   if (data.name !== "swapExactETHForTokens") {
     return null;
   }

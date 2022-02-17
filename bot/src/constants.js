@@ -7,7 +7,7 @@ dotenv.config();
 import { ethers } from "ethers";
 import { logError } from "./logging.js";
 
-const config = require("./config.json");
+const config = require("./local.json");
 const IUniswapV2PairAbi = require("./abi/IUniswapV2Pair.json");
 
 let hasEnv = true;
@@ -33,7 +33,7 @@ if (!hasEnv) {
 
 // Contracts
 export const CONTRACTS = {
-  UNIV2_ROUTER: config.UNIV2_ROUTER,
+  UNIV2_ROUTER: config.contract.router,
 
   // Sandwich contract
   SANDWICH: process.env.SANDWICH_CONTRACT,
@@ -47,10 +47,10 @@ export const TOKENS = {
 
 // Providers
 export const provider = new ethers.providers.JsonRpcProvider(
-  config.RPC_URL
+  config.chain.nodes.configure
 );
 export const wssProvider = new ethers.providers.WebSocketProvider(
-  config.RPC_URL_WSS
+  config.chain.nodes.stream
 );
 
 // Used to send transactions, needs ether

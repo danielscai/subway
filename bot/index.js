@@ -59,17 +59,19 @@ const sandwichUniswapV2RouterTx = async (txHash) => {
     return;
   }
   // 如果是和uniswap router 交互的，则在这里打印一下。提示看到这个tx
-  // 我自己的交易，竟然没有被捕获到。
+  // 我自己的交易，竟然没有被捕获到。原因是国内网络不行， 换到国外网络就好了。 
   console.log("match to uniswap v2 router ",txHash);
   
 
   // Decode transaction data
   // i.e. is this swapExactETHForToken?
   // You'll have to decode all the other possibilities :P
+  // 找到匹配的方法。 
   const routerDataDecoded = parseUniv2RouterTx(tx.data);
 
   // Basically means its not swapExactETHForToken and you need to add
   // other possibilities
+  // 找不到的话，就返回了。 方法名不匹配。 
   if (routerDataDecoded === null) {
     return;
   }
@@ -79,6 +81,7 @@ const sandwichUniswapV2RouterTx = async (txHash) => {
 
   // If tx deadline has passed, just ignore it
   // As we cannot sandwich it
+  // deadline 检查，没什么花头。 
   if (new Date().getTime() / 1000 > deadline) {
     console.log("exceeded deadline");
     return;

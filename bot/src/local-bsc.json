@@ -1,0 +1,55 @@
+{
+  "chain": {
+      "nodes": {
+          "stream": "wss://ws-nd-059-700-417.p2pify.com/545f7f69a26306710d7bdf13e1dd308b",
+          "snipe": "wss://ws-nd-059-700-417.p2pify.com/545f7f69a26306710d7bdf13e1dd308b",
+          "configure": "https://nd-059-700-417.p2pify.com/545f7f69a26306710d7bdf13e1dd308b"
+      },
+      "id": 56,
+      "name": "bsc"
+  },
+  "order": {
+      "size": 0.5,
+      "expected_tokens": 250
+  },
+  "contract": {
+      "trigger": "0x8413605505fF1eC48F2443F3a9A95C54E89e64b3",
+      "factory": "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73",
+      "router": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+      "factory_creation_code": "0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9"
+  },
+  "token": {
+      "address": "0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd",
+      "pair_address": "0x78867bbeef44f2326bf8ddd1941a4439382ef2a7",
+      "wbnb": "0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd",
+      "busd": "0x78867bbeef44f2326bf8ddd1941a4439382ef2a7"
+  },
+  "accounts": {
+      "admin": "b018383c29d2f19fe54225446766fe99ca2f6db18d3f484ac797f4808ed9a5de",
+      "disperser": "b018383c29d2f19fe54225446766fe99ca2f6db18d3f484ac797f4808ed9a5de"
+  },
+  "previewer": {
+      "ext_order_size": 1,
+      "liquidity_in_bnb": 0.5,
+      "liquidity_in_token": 260.9
+  },
+  "swarm": {
+      "rounds": 3,
+      "spread_amount": 1,
+      "path": "./config/bee_book.json"
+  },
+  "sniper": {
+      "mode": "pending_txs",
+      "minimum_liquidity": 1.98,
+      "monitors": {
+          "address_list": {
+              "enabled": false,
+              "list": []
+          },
+          "whale": {
+              "enabled": false,
+              "min": "0"
+          }
+      }
+  }
+}

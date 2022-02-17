@@ -60,7 +60,7 @@ const sandwichUniswapV2RouterTx = async (txHash) => {
   }
   // 如果是和uniswap router 交互的，则在这里打印一下。提示看到这个tx
   // 我自己的交易，竟然没有被捕获到。原因是国内网络不行， 换到国外网络就好了。 
-  console.log("match to uniswap v2 router ",txHash);
+  // console.log("match to uniswap v2 router ",txHash);
   
 
   // Decode transaction data

@@ -16,7 +16,7 @@
         "trigger": "0x8413605505fF1eC48F2443F3a9A95C54E89e64b3",
         "factory": "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73",
         "router": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
-        "factory_creation_code": "0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9"
+        "factory_creation_code": "0x00fb7f630766e6a796048ea87d01acd3068e8ff67d078148a3fa3f4a84f69bd5"
     },
     "token": {
         "address": "0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd",

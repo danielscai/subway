@@ -2,6 +2,11 @@ import { ethers } from "ethers";
 import { uniswapV2Pair } from "./constants.js";
 import { match } from "./utils.js";
 
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+
+const config = require("./local.json");
+
 /* 
   Sorts tokens
 */
@@ -20,9 +25,9 @@ export const getUniv2PairAddress = (tokenA, tokenB) => {
 
   const salt = ethers.utils.keccak256(token0 + token1.replace("0x", ""));
   const address = ethers.utils.getCreate2Address(
-    "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f", // Factory address (contract creator)
+    config.contract.factory, // Factory address (contract creator)
     salt,
-    "0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f" // init code hash
+    config.contract.factory_creation_code // init code hash
   );
 
   return address;

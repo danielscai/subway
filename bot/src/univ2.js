@@ -43,7 +43,7 @@ export const getUniv2Reserve = async (pair, tokenA, tokenB) => {
   // 这个 uniswapV2Pair 是 合约， 也就是调用了合约的  getReserves 的函数 
   // 这两个值保存在了 UniswapV2Pair 中的两个变量中了，一个是 reserved0 ,一个是 reserved1.
   // 值需要调用合约把数据读出来就可以了，不需要做什么计算。
-  console.log("pair ",pair )
+  // console.log("pair ",pair )
   const [reserve0, reserve1] = await uniswapV2Pair.attach(pair).getReserves();
 
   // 这里的判断只需要知道两个token 有没有对掉过就可以了， 如果没有，原路返回，如果有，就反过来就好了。 

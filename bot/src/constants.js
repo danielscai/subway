@@ -13,8 +13,8 @@ const IUniswapV2PairAbi = require("./abi/IUniswapV2Pair.json");
 let hasEnv = true;
 
 const ENV_VARS = [
-  "RPC_URL",
-  "RPC_URL_WSS",
+  // "RPC_URL",
+  // "RPC_URL_WSS",
   "PRIVATE_KEY",
   // "FLASHBOTS_AUTH_KEY",
   "SANDWICH_CONTRACT",

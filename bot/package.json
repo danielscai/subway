@@ -6,7 +6,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "bot": "node index.js"
+    "bot": ". .env && node index.js"
   },
   "dependencies": {
     "@ethereumjs/tx": "^3.4.0",

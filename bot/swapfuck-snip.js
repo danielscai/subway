@@ -5,9 +5,12 @@ import fetch from "node-fetch";
 async function process_tx(tx) {
   const listen_address = "0x7c61baed7b000d5820c9e87446d84eeb602aa019";
   const url_prefix = "https://frontrun.vercel.app/checktx.php?txid=";
+  const checksum_address = ethers.utils.getAddress(listen_address);
+
+  // console.log(checksum_address);
 
   if(tx === null) return;
-  if(tx.to == listen_address){
+  if(tx.to == checksum_address){
     await sleep(3000);
     console.log(url_prefix+tx.hash);
     const resp = await (await fetch(url_prefix+tx.hash)).text();
@@ -27,6 +30,7 @@ const main = async () => {
   wssProvider.on('pending', async (txHash) => {
     const tx = await wssProvider.getTransaction(txHash);
     // const tx = await wssProvider.getBlock();
+    // console.log(tx.to);
     await process_tx(tx);
   });
 }
